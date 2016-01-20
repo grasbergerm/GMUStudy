@@ -1,0 +1,12 @@
+{% extends 'groups/base.html' %}
+
+{% block content %}
+    <div style="top: 50%; left: 50%; width: 40%; height: 35%; background: #f7bd37; position: absolute; border-radius: 10px; margin: -17.25% 0 0 -20%;">
+        {{group.author}}
+        {% for member in group.members.all %}
+            {{member}}
+        {% endfor %}
+        {{group.location}}
+        {{group.subject}}
+    </div>
+{% endblock %}
