@@ -1,0 +1,12 @@
+{% extends 'groups/base.html' %}
+
+{% block content %}
+    <div style="top: 50%; left: 50%; width: 40%; height: 35%; background: #f7bd37; position: absolute; border-radius: 10px; margin: -17.25% 0 0 -20%;">
+        <h1 style="font-size: 300%; text-align: center; font-weight: bold; margin-top: 30px;">Welcome to GMUStudy!</h1>
+
+        <div style="display: table; margin: 50 auto;">
+            <a href="{% url 'group_new' %}"><button type="button" class="btn btn-primary" style="width:200px; height:75px; font-size:150%;color:#333333; margin:20px;">Create a group</button></a>
+            <a href="{% url 'group_list' %}"><button type="button" class="btn btn-info" style="width:200px; height:75px; font-size:150%; color:#333333; margin:20px;">View all groups</button></a>
+        </div>
+    </div>
+{% endblock %}

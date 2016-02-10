@@ -4,7 +4,9 @@
     <div style="top: 50%; left: 50%; width: 40%; height: 35%; background: #f7bd37; position: absolute; border-radius: 10px; margin: -17.25% 0 0 -20%;">
         <h1 style="text-align: center;">New group</h1>
         <form method="POST" class="post-form" style="display: table; margin: 50 auto;">{% csrf_token %}
-            {{ form.as_p }}
+            <div class="input-group">
+                {{ form.as_p }}
+            </div>
             <button type="submit" class="save btn btn-default">Save</button>
         </form>
     </div>
