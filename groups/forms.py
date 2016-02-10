@@ -177,5 +177,5 @@ class GroupForm(forms.ModelForm):
 
     class Meta:
         model = Group
-        fields = ('location', 'subject', 'group_date', 'time')
-        widgets = widgets={'group_date': forms.SelectDateWidget(), 'time':SelectTimeWidget(twelve_hr=True)}
+        fields = ('location', 'subject', 'date_of_group', 'time')
+        widgets = widgets={'date_of_group': forms.SelectDateWidget(), 'time':SelectTimeWidget(twelve_hr=True)}

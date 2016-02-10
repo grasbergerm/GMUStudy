@@ -2,14 +2,16 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .forms import GroupForm
 from .models import Group
 from django.utils import timezone
-
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
     return render(request, 'groups/index.html', {})
+
 def group_detail(request, pk):
     group = get_object_or_404(Group, pk=pk)
     return render(request, 'groups/group_detail.html', {'group': group})
+@login_required
 def group_new(request):
     if request.method == "POST":
         form = GroupForm(request.POST)
@@ -22,6 +24,7 @@ def group_new(request):
     else:
         form = GroupForm()
     return render(request, 'groups/group_edit.html', {'form': form})
+
 def group_list(request):
     groups = Group.objects.filter(created_date__lte=timezone.now()).order_by('created_date')
     return render(request, 'groups/group_list.html', {'groups': groups})

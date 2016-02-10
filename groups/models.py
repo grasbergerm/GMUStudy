@@ -6,7 +6,7 @@ from django.utils import timezone
 class Group(models.Model):
     author = models.ForeignKey('auth.User')
     members = models.ManyToManyField('auth.User',related_name="is_a_member")
-    group_date = models.DateField(default=timezone.now, blank=True)
+    date_of_group = models.DateField(default=timezone.now, blank=True)
     time = models.TimeField(default=timezone.now, blank=True)
     location = models.CharField(max_length=200)
     subject = models.CharField(max_length=200)
